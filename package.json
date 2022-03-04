@@ -1,34 +1,33 @@
 {
-  "name": "vue-extensions",
-  "version": "0.3.0",
+  "name": "vue3-extensions",
+  "version": "1.0.0",
   "license": "MIT",
-  "author": "Christian González <christian.gonzalez@nerdocs.at>",
+  "author": "Ostyn Vincent",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vue-extensions index.js",
-    "lint": "vue-cli-service lint",
-    "prepublish": "npm run lint && npm run build"
+    "serve": "vite",
+    "build": "vue-tsc --noEmit && vite build --target lib --name vue-extensions index.js",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/nerdocs/vue-extensions"
+    "url": "git://github.com/Vincere1st/vue-extensions"
   },
   "bugs": {
-    "url": "https://github.com/nerdocs/vue-extensions/issues"
+    "url": "https://github.com/Vincere1st/vue-extensions/issues"
   },
   "main": "./dist/vue-extensions.common.js",
   "dependencies": {
-    "core-js": "^3.4.3",
-    "vue": "^2.6.10"
+    "core-js": "^3.21.1",
+    "npm": "^8.5.3",
+    "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.1.0",
-    "@vue/cli-plugin-eslint": "^4.1.0",
-    "@vue/cli-service": "^4.1.0",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "eslint": "^8.5.0",
+    "eslint-plugin-vue": "^8.2.0",
+    "vite": "^2.7.13",
+    "vue-template-compiler": "^2.6.10",
+    "vue-tsc": "^0.31.1",
+    "typescript": "~4.5.5"
   },
   "eslintConfig": {
     "root": true,
@@ -36,16 +35,8 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
+      "plugin:vue/vue3-essential",
       "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+    ]
+  }
 }
